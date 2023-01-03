@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="utf-8" />
+        <title>ELoS - Nível 2</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="../../../scss/styles.scss">
+        <link rel="shortcut icon" href="../../img/favicon.ico" type="image/x-icon">
+        <script src="../../../js/helpers/componentImporter.js"></script>
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-6 vh-100">
+                    <div class="position-absolute">
+                        <h2 class="bg-warning">Nível 2 - Fase 2</h2>
+                        <p class="bg-info">
+                            Faça o robô chegar aos cristais, após isso, os recolha.
+                        </p>
+                        <h2 id="winMessage" class="bg-success invisible">Fase Concluída</h2>
+                        <a id="advanceBtn" class="btn btn-primary invisible" href="../phase3/index.html">Avançar</a>
+                    </div>
+                    <div class="position-absolute bottom-0 start-0 ms-3">
+                        <div class="d-flex">
+                            <img src="../../img/fire-extinguisher.png" alt="Extintor de Incêndio" width="40" height="40">
+                            <h2 id="extinguisherUses" class="text-light">x3</h2>
+                        </div>
+                    </div>
+                    <canvas id="sceneView" style="width: 100%; height: 100%;"></canvas>
+                </div>
+                <div class="col-6">
+                    <div class="row">
+                        <div class="col-12 mt-2 mb-2">
+                            <script id="availableFunctions">
+                                importComponent('../../components/level2/availableFunctions.html','availableFunctions')
+                            </script>
+                        </div>
+                        <div class="col-12 mb-2">
+                            <div class="card" style="min-height: 30vh; max-height: 40vh;">
+                                <div class="card-header">
+                                    <h4 class="card-title">Digite seu código aqui</h4>
+                                </div>
+                                <div class="card-body overflow-auto" id="codeToExecute">
+                                   
+                                </div>
+                                <div class="card-footer">
+                                    <button id="execute" type="button" class="btn btn-primary">Executar</button>
+                                    <button id="reset" type="button" class="btn btn-secondary">Reset</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="card" style="max-height: 40vh;">
+                                <div class="card-header">
+                                    <h4 class="card-title">Console</h4>
+                                </div>
+                                <div class="card-body overflow-auto">
+                                    <code id="console-printing">
+                            
+                                    </code>
+                                </div>
+                                <div class="card-footer d-flex flex-row-reverse">
+                                    <button id="clsConsole" type="button" class="btn btn-secondary">Limpar Console</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script type="module" src="../../../js/packages/bootstrap.js"></script>
+        <script type="module" src="../../../js/level2/phase2/phase2Scene.js"></script>
+    </body>
+</html>

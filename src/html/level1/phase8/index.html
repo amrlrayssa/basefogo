@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="utf-8" />
+        <title>ELoS - Nível 1</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="../../../scss/styles.scss">
+        <link rel="shortcut icon" href="../../img/favicon.ico" type="image/x-icon">
+        <script src="../../../js/helpers/componentImporter.js"></script>
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-6 vh-100">
+                    <div class="position-absolute">
+                        <h2 class="bg-warning">Nível 1 - Fase 8 de 8</h2>
+                        <p class="bg-info">
+                            Faça o robô chegar aos cristais, após isso, os recolha.
+                        </p>
+                        <h2 id="winMessage" class="bg-success invisible">Fase Concluída</h2>
+                        <a id="advanceBtn" class="btn btn-primary invisible" href="../../index.html">Avançar</a>
+                    </div>
+                    <div class="position-absolute bottom-0">
+                        <h3 id="timer" class="text-white">Tempo:</h3>
+                    </div>
+                    <canvas id="sceneView" style="width: 100%; height: 100%;"></canvas>
+                </div>
+                <div class="col-6">
+                    <div class="row">
+                        <div class="col-12 mt-2 mb-2">
+                            <script id="availableFunctions">
+                                importComponent('../../components/level1/availableFunctions.html','availableFunctions')
+                            </script>
+                        </div>
+                        <div class="col-12 mb-2">
+                            <div class="card" style="min-height: 30vh; max-height: 40vh;">
+                                <div class="card-header">
+                                    <h4 class="card-title">Digite seu código aqui</h4>
+                                </div>
+                                <div class="card-body overflow-auto" id="codeToExecute">
+                                   
+                                </div>
+                                <div class="card-footer">
+                                    <button id="execute" type="button" class="btn btn-primary">Executar</button>
+                                    <button id="reset" type="button" class="btn btn-secondary">Reset</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="card" style="max-height: 40vh;">
+                                <div class="card-header">
+                                    <h4 class="card-title">Console</h4>
+                                </div>
+                                <div class="card-body overflow-auto">
+                                    <code id="console-printing">
+                            
+                                    </code>
+                                </div>
+                                <div class="card-footer d-flex flex-row-reverse">
+                                    <button id="clsConsole" type="button" class="btn btn-secondary">Limpar Console</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="logModal" tabindex="-1" aria-labelledby="logModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="logModalLabel">Para avançar para o Nível 2, informe:</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form id="dataLog">
+                                <div class="mb-2">
+                                    <label for="name" class="form-label"><b>Nome:</b></label>
+                                    <input type="text" name="name" id="name" class="form-control">
+                                </div>
+                                <div class="mb-2">
+                                    <label for="age" class="form-label"><b>Idade:</b></label>
+                                    <input type="number" name="age" id="age" class="form-control" min="1" step="1">
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                            <button id="subBtn" type="button" class="btn btn-primary">Avançar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script type="module" src="../../../js/packages/bootstrap.js"></script>
+        <script type="module" src="../../../js/level1/phase8/phase8Scene.js"></script>
+    </body>
+</html>
